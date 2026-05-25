@@ -27,7 +27,6 @@ description: Règles de nommage, nullabilité, gestion des erreurs, logging, sty
 - Utiliser des exceptions métier spécifiques (`OrderNotFoundException`, `InvalidOrderStateException`) plutôt que des exceptions génériques
 - Laisser remonter les exceptions non récupérables
 - Documenter les exceptions dans la Javadoc (`@throws`)
-- Centraliser la gestion des erreurs HTTP via `@ControllerAdvice`
 
 ## Logging
 
@@ -57,8 +56,13 @@ description: Règles de nommage, nullabilité, gestion des erreurs, logging, sty
 
 ## Style général
 
+- **Imports** : 
+  - Ordre des imports : `java.*` -> `jakarta.*` -> frameworks (ex: `org.springframework.*`) -> projet (`com.ps.orderservice.*`)
+  - Interdiction des imports wildcard (`import java.util.*`) : importer explicitement chaque classe
 - Préférer les records Java pour les DTOs et objets immuables
-- Utiliser les `switch` expressions (Java 21) quand approprié
+- Utiliser les `sealed` classes et interfaces pour les hiérarchies fermées (Java 21)
+- Utiliser les `switch` expressions et le pattern matching (Java 21) quand approprié
 - Préférer `var` pour les variables locales quand le type est évident
+- Utiliser le pattern matching pour `instanceof`
 - Limiter les méthodes à une responsabilité unique et une taille raisonnable (< 30 lignes)
 - Pas de nombres magiques : extraire en constantes nommées

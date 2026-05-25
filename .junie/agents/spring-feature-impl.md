@@ -1,6 +1,6 @@
 ---
 name: "spring-feature-impl"
-description: "Implémente une nouvelle fonctionnalité Spring Boot en respectant l'architecture en couches (controller/service/repository), les bonnes pratiques d'injection de dépendances, et en suivant le cycle TDD red-green-refactor avec JUnit 5 et Mockito."
+description: "Implémente une nouvelle fonctionnalité Spring Boot (feature, ajouter, créer, endpoint, API, CRUD, implémenter, développer, spécification) en respectant l'architecture en couches (controller/service/repository), les bonnes pratiques d'injection de dépendances, et en suivant le cycle TDD red-green-refactor avec JUnit 5 et Mockito."
 skills:
   - "spring-layering"
   - "testing-and-tdd"
@@ -34,4 +34,11 @@ Lors de l'implémentation d'une feature :
    - Tests d'intégration avec `@SpringBootTest` ou `@WebMvcTest` pour le controller
    - Couvre les cas nominaux, les cas d'erreur et les cas limites
 
-4. **Qualité** : respecte les conventions de nommage Java 21, gère correctement les erreurs (exceptions métier, `@ControllerAdvice`), et documente les endpoints.
+4. **Qualité** : applique les règles des skills `code-conventions` et `spring-layering` pour tout le code produit.
+
+5. **Rapport** : structure le rapport final :
+   - **Fonctionnalité** : description de ce qui a été implémenté
+   - **Fichiers créés/modifiés** : liste avec rôle de chaque fichier
+   - **Endpoints** : méthode HTTP, URL, description, codes de retour
+   - **Tests** : liste des tests ajoutés (unitaires + intégration)
+   - **Statut** : ✅ Implémenté (tous les tests passent) / ⚠️ Partiel (ce qui manque)

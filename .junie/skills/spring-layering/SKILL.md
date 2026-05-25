@@ -19,7 +19,7 @@ description: Bonnes pratiques d’injection de dépendances, séparation des cou
 - **Aucun accès direct** au repository depuis le controller
 - Utiliser les annotations appropriées : `@GetMapping`, `@PostMapping`, `@PutMapping`, `@DeleteMapping`
 - Retourner `ResponseEntity<T>` pour contrôler le code HTTP de retour
-- Valider les entrées avec `@Valid` et les annotations Jakarta Validation (`@NotNull`, `@NotBlank`, `@Email`, etc.)
+- Valider les entrées avec `@Valid` (y compris sur les objets imbriqués) et les annotations Jakarta Validation (`@NotNull`, `@NotBlank`, `@Email`, etc.)
 
 ## Couche Service (`@Service`)
 
@@ -27,6 +27,7 @@ description: Bonnes pratiques d’injection de dépendances, séparation des cou
 - Ne jamais retourner de `ResponseEntity` depuis un service — retourner des objets métier ou lever des exceptions
 - Garder les méthodes courtes et focalisées sur une seule responsabilité
 - Utiliser `@Transactional` pour les opérations d'écriture
+- Utiliser `@Transactional(readOnly = true)` pour les opérations de lecture seule (optimisation)
 
 ## Couche Repository (`@Repository` / Spring Data JPA)
 
@@ -50,5 +51,6 @@ description: Bonnes pratiques d’injection de dépendances, séparation des cou
 - Annoter avec `@Entity` et `@Table` si le nom de table diffère
 - Utiliser `@Id` et `@GeneratedValue` pour les clés primaires
 - Préférer les types `enum` pour les statuts plutôt que des chaînes de caractères dupliquées
-- Éviter d'exposer directement les entités JPA dans les réponses API : utiliser des DTOs
+- Éviter d'exposer directement les entités JPA dans les réponses API : utiliser des **records Java comme DTOs**
+- La conversion Entité ↔ DTO doit se faire dans la couche **Service**, pas dans le Controller
 - Initialiser les champs temporels (`createdAt`) via `@PrePersist` ou des valeurs par défaut
