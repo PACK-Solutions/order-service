@@ -1,4 +1,10 @@
-# Order Service
+# Guidelines Junie — Order Service
+
+## Règles de délégation aux agents
+
+- **Revue de code** : délègue systématiquement à l'agent `code-review-helper`.
+- **Correction de bug** : délègue à l'agent `bugfix-investigator`.
+- **Nouvelle fonctionnalité Spring Boot** : délègue à l'agent `spring-feature-impl`.
 
 ## Tech Stack
 
