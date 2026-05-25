@@ -1,3 +1,8 @@
+---
+name: spring-layering
+description: Bonnes pratiques d’injection de dépendances, séparation des couches (controller/service/repository), ControllerAdvice et JPA en Spring Boot.
+---
+
 # Architecture en couches — Spring Boot
 
 ## Injection de dépendances

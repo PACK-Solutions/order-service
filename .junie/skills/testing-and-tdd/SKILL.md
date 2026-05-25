@@ -1,3 +1,8 @@
+---
+name: testing-and-tdd
+description: Cycle red-green-refactor, JUnit 5, Mockito, tests d’intégration Spring Boot et gestion des cas limites.
+---
+
 # Tests et TDD — JUnit 5, Mockito
 
 ## Cycle Red-Green-Refactor

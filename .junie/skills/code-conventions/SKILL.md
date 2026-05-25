@@ -1,3 +1,8 @@
+---
+name: code-conventions
+description: Règles de nommage, nullabilité, gestion des erreurs, logging, style et erreurs classiques pour un projet Java 21.
+---
+
 # Conventions de code — Java 21
 
 ## Nommage
